@@ -11,7 +11,7 @@ class TestMathFunctions(unittest.TestCase):
         self.assertEqual(MathFunctions.subtract(4, 3), 1)
 
     def test_mult(self):
-        self.assertEqual(MathFunctions.multiply(3, 4), 12)
+        self.assertEqual(MathFunctions.multiply(3, 4), 1)
 
     def test_div(self):
         self.assertEqual(MathFunctions.divide(6, 2), 3)
