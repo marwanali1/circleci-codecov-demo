@@ -16,12 +16,11 @@ jobs:
           name: Setup testing environment
           command: pipenv install
 
-      - run:
-          name: Run tests
-          command: |
-            $HOME/.local/bin/coverage run test_math_functions.py
-            $HOME/.local/bin/coverage report
-            $HOME/.local/bin/coverage html
+      - run: coverage run test_math_functions.py
+
+      - run: coverage report
+
+      - run: coverage html
 
       - store_artifacts:
           path: htmlcov
