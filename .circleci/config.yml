@@ -16,7 +16,7 @@ jobs:
           name: Setup testing environment
           command: pipenv install
 
-      - run: pipenv run
+      - run: pipenv shell
 
       - run:
           name: Check dependencies
