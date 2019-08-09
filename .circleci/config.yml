@@ -12,5 +12,22 @@ jobs:
     steps:
       - checkout
 
-      # run tests!
-      - run: python3 test_math.py
+      - run:
+          name: Setup testing environment
+          command: pipenv install
+
+      - run:
+          name: Run tests
+          command: |
+            $HOME/.local/bin/coverage run test_math_functions.py
+            $HOME/.local/bin/coverage report
+            $HOME/.local/bin/coverage html
+
+      - store_artifacts:
+          path: htmlcov
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - build
