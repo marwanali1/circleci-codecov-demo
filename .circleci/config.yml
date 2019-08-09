@@ -16,23 +16,23 @@ jobs:
           name: Setup testing environment
           command: pipenv install
 
-    test:
-        steps:
-          - run:
-              name: Run tests
-              command: |
-                pipenv run coverage run test_math_functions.py
+  test:
+      steps:
+        - run:
+            name: Run tests
+            command: |
+              pipenv run coverage run test_math_functions.py
 
-    coverage:
-        steps:
-          - run:
-              name: Check code coverage
-              command: |
-                pipenv run coverage report
-                pipenv run coverage html
+  coverage:
+      steps:
+        - run:
+            name: Check code coverage
+            command: |
+              pipenv run coverage report
+              pipenv run coverage html
 
-    scan:
-      - run: echo "Sonarqube not configured"
+  scan:
+    - run: echo "Sonarqube not configured"
 
 
 workflows:
