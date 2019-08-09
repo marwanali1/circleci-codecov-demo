@@ -16,11 +16,12 @@ jobs:
           name: Setup testing environment
           command: pipenv install
 
-      - run: coverage run test_math_functions.py
-
-      - run: coverage report
-
-      - run: coverage html
+      - run:
+          name: Run tests
+          command: |
+            coverage run test_math_functions.py
+            coverage report
+            coverage html
 
       - store_artifacts:
           path: htmlcov
@@ -29,4 +30,4 @@ workflows:
   version: 2
   workflow:
     jobs:
-      - build
+    - build
