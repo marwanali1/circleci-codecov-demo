@@ -16,18 +16,12 @@ jobs:
           name: Setup testing environment
           command: pipenv install
 
-      - run: pipenv shell
-
-      - run:
-          name: Check dependencies
-          command: pip list
-
       - run:
           name: Run tests
           command: |
-            coverage run test_math_functions.py
-            coverage report
-            coverage html
+            pipenv run coverage run test_math_functions.py
+            pipenv run coverage report
+            pipenv run coverage html
 
       - store_artifacts:
           path: htmlcov
