@@ -14,13 +14,14 @@ jobs:
 
       - run:
           name: Setup testing environment
-          command: |
-            export PYTHONPATH="$PWD"
-            pipenv install
+          command: pipenv install
 
       - run:
           name: Run tests
-          command: pipenv run coverage run tests/test_math_functions.py
+          command: |
+            export PYTHONPATH="$PWD"
+            echo $PYTHONPATH
+            pipenv run coverage run tests/test_math_functions.py
 
       - run:
           name: Check code coverage
