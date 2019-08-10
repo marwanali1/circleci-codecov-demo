@@ -25,10 +25,8 @@ jobs:
       - run:
           name: Check code coverage
           command: |
-            pipenv run coverage report
-            pipenv run coverage html
-
-      - run: codecov
+            export CODECOV_TOKEN="741159c4-9c75-4a66-90c1-76af59143255"
+            pipenv run codecov
 
 workflows:
   version: 2
