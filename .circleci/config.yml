@@ -14,7 +14,9 @@ jobs:
 
       - run:
           name: Setup testing environment
-          command: pipenv install
+          command: |
+            export PYTHONPATH="$PWD"
+            pipenv install
 
       - run:
           name: Run tests
