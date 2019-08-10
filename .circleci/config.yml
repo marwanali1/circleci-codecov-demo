@@ -20,7 +20,7 @@ jobs:
 
       - run:
           name: Run tests
-          command: pipenv run coverage run test_math_functions.py
+          command: pipenv run coverage run tests/test_math_functions.py
 
       - run:
           name: Check code coverage
