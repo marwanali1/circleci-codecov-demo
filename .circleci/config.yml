@@ -6,7 +6,7 @@ version: 2.1
 
 orbs:
   codecov: codecov/codecov@1.0.2
-#  sonarqube: onehq/sonarqube@0.3.0
+  sonarqube: onehq/sonarqube@0.3.0
 
 jobs:
   build:
@@ -27,10 +27,7 @@ jobs:
             export PYTHONPATH="$PWD"
             pipenv run coverage run tests/test_math_functions.py
 
-      - run:
-          name: Check code coverage
-          command: pipenv run codecov
-
+      - run: pipenv run codecov
       - codecov/upload:
           file: coverage.xml
 
