@@ -27,14 +27,12 @@ jobs:
             export PYTHONPATH="$PWD"
             pipenv run coverage run tests/test_math_functions.py
 
+      - run:
+          name: Check code coverage
+          command: pipenv run codecov
+
       - codecov/upload:
           file: coverage.xml
-
-#      - run:
-#          name: Check code coverage
-#          command: |
-#            export CODECOV_TOKEN="741159c4-9c75-4a66-90c1-76af59143255"
-#            pipenv run codecov
 
 workflows:
   version: 2.1
