@@ -9,7 +9,6 @@ Project for playing with/testing a bunch of CI/CD tools and services.
 #### CI/CD Checklist (Always evolving)
 - [x] CircleCI
 - [x] Codecov
-- [ ] Sonarqube
 - [ ] Terraform
 - [ ] Docker
 - [ ] Kubernetes 
