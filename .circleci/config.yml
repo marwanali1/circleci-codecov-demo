@@ -2,14 +2,19 @@
 #
 # Check https://circleci.com/docs/2.0/language-python/ for more details
 #
-version: 2
+version: 2.1
+
+orbs:
+  codecov: codecov/codecov@1.0.2
+#  sonarqube: onehq/sonarqube@0.3.0
+
 jobs:
   build:
     docker:
       # specify the version you desire here
       - image: circleci/python:3.7.3
 
-    steps:
+    steps: 
       - checkout
 
       - run:
@@ -22,14 +27,16 @@ jobs:
             export PYTHONPATH="$PWD"
             pipenv run coverage run tests/test_math_functions.py
 
-      - run:
-          name: Check code coverage
-          command: |
-            export CODECOV_TOKEN="741159c4-9c75-4a66-90c1-76af59143255"
-            pipenv run codecov
+      - codecov/upload:
+          file: coverage.yml
+#      - run:
+#          name: Check code coverage
+#          command: |
+#            export CODECOV_TOKEN="741159c4-9c75-4a66-90c1-76af59143255"
+#            pipenv run codecov
 
 workflows:
-  version: 2
+  version: 2.1
   workflow:
     jobs:
     - build
