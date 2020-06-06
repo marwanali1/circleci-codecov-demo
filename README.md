@@ -1,4 +1,4 @@
-# circleci-codecov-demo
+# CircleCi Codecov Demo
 
 [![GitHub](https://img.shields.io/github/license/marwanali1/circleci-codecov-demo?color=g)](https://github.com/marwanali1/circleci-codecov-demo/blob/develop/LICENSE)
 [![CircleCI](https://img.shields.io/circleci/build/github/marwanali1/circleci-codecov-demo/develop)](https://circleci.com/gh/marwanali1/circleci-codecov-demo/tree/develop)
